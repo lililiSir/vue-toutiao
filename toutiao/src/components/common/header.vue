@@ -4,15 +4,16 @@
             <el-col :span="24">
                 <div class="grid-content">
                     <div class="headImg">
-                        <img src="../../../static/img/headImg.jpg" alt="headImg" width="48" height="48" style="border-radius:25px">       
+                        <img :src="headImg" alt="headImg" width="48" height="48" style="border-radius:25px">       
                     </div>                   
                     <div class="searchInput">
-                        <el-input placeholder="请输入内容">
+                        <el-input :placeholder="placeholderMsg">
                             <template slot="prepend"><i class="iconfont icon-search1"></i></template>
                         </el-input>
                     </div>
                     <div class="sendMessage">
                         <i class="iconfont icon-shuru"></i>
+                        <span style="font-size:12px;display:block">发布</span>
                     </div>
                 </div>
             </el-col>    
@@ -23,9 +24,10 @@
 <script>
     export default {
         name: "headerTop",
-        data() {
-            return {
-                msg: "这是首页完成的状态"
+        data(){
+            return{
+                placeholderMsg:"我叫王大锤|时间都去哪了|...",
+                headImg:"../../../static/img/headImg.jpg"
             }
         }
     }
@@ -62,7 +64,7 @@
         font-size: 20px;
     }
     .sendMessage{
-         padding-top:10px;
+         padding-top:5px;
          font-size: 20px;
     }
 </style>
