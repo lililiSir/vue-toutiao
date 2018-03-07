@@ -6,7 +6,14 @@
                     
                 </el-tab-pane>
                 <el-tab-pane label="推荐" name="second">
-                    <hot-news></hot-news>
+                    <div class="slide-new">
+                        <top-news></top-news>
+                        <hot-news></hot-news>
+                        <hot-news></hot-news>
+                        <hot-news></hot-news>
+                        <hot-news></hot-news>
+                        <hot-news></hot-news>
+                    </div>
                 </el-tab-pane>
                 <el-tab-pane label="南京" name="third">
 
@@ -28,6 +35,7 @@
 <script>
     // 顶部导航栏
     import hotNews from '@/components/common/hotNews'
+    import topNews from '@/components/common/topNews'
     export default {
         name: "topNavigation",
         data() {
@@ -37,7 +45,7 @@
             }
         },
         components:{
-            hotNews
+            hotNews,topNews
         }
     }
 </script>
@@ -48,6 +56,12 @@
         padding: 0px;
         width: 100%;
         height: 40px;
-        background-color: #f9fcfc
+        background-color: #f9fcfc,
+        overflow：hidden
+    }
+    .slide-new{
+        height:530px;
+        width:100%;
+        overflow:scroll
     }
 </style>
