@@ -7,7 +7,8 @@
                 </el-tab-pane>
                 <el-tab-pane label="推荐" name="second">
                     <div class="slide-new">
-                        <top-news></top-news>
+                        <router-link to="/detail"><top-news></top-news></router-link>
+                        <!-- <top-news></top-news> -->
                         <hot-news></hot-news>
                         <hot-news></hot-news>
                         <hot-news></hot-news>
@@ -64,4 +65,19 @@
         width:100%;
         overflow-y:scroll
     }
+    a{
+        text-decoration: none;
+    }
+    a:link{
+        color: black;
+    }
+    a:visited {
+        color:black;
+    }
+    /* a:hover {
+        color: black;
+    } */
+    /* a:active {
+        color: black;
+    } */
 </style>

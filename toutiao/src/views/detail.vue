@@ -2,7 +2,7 @@
     <div class="detail">
         <div class="top">
             <div class="top-left-back">
-                <i class="iconfont icon-fanhui5"></i>
+                <router-link to="/"><i class="iconfont icon-fanhui5"></i></router-link>
             </div>
             <div class="top-middle-title">
                 <span>{{title}}</span>
@@ -140,4 +140,20 @@
     .icon-pinglun1,.icon-31shoucang,.icon-31fenxiang {
         font-size:16px;
     }
+    a{
+        text-decoration: none;
+    }
+    a:link{
+        color: black;
+    }
+    a:visited {
+        color:black;
+    }
+    /* a:hover {
+        color: black;
+    } */
+    /* a:active {
+        color: black;
+    } */
+
 </style>
