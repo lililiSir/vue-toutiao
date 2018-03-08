@@ -7,13 +7,11 @@
                         <img :src="headImg" alt="headImg" width="48" height="48" style="border-radius:25px">       
                     </div>                   
                     <div class="searchInput">
-                        <el-input :placeholder="placeholderMsg">
-                            <template slot="prepend"><i class="iconfont icon-search1"></i></template>
-                        </el-input>
+                        <el-input :placeholder="placeholderMsg" prefix-icon="el-icon-search"></el-input>
                     </div>
                     <div class="sendMessage">
                         <i class="iconfont icon-shuru"></i>
-                        <span style="font-size:12px;display:block">发布</span>
+                        <span style="font-size:10px;display:block">发布</span>
                     </div>
                 </div>
             </el-col>    
@@ -57,6 +55,7 @@
     }
     .searchInput{
         padding-top:8px;
+        width:260px;
         float: left;
         padding-left:15px
     }
@@ -65,6 +64,8 @@
     }
     .sendMessage{
          padding-top:5px;
-         font-size: 20px;
+    }
+    .icon-shuru{
+        font-size:20px;
     }
 </style>

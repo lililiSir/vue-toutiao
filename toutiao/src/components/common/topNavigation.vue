@@ -62,6 +62,6 @@
     .slide-new{
         height:530px;
         width:100%;
-        overflow:scroll
+        overflow-y:scroll
     }
 </style>
