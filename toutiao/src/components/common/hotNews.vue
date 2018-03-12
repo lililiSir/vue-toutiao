@@ -10,7 +10,7 @@
                     <span>{{publisher}}</span>&nbsp;&nbsp;<span>{{recommend}}评论</span>
                 </div>
             </el-col>
-            <el-col :span="col2">
+            <el-col :span="col2" v-if="show">
                 <img :src="headImg" alt="headImg" width="120" height="80">
             </el-col>
         </el-row>
@@ -23,15 +23,17 @@
         name: "hotNews",
         data() {
             return {
-                title: "习近平：发展是第一要务，人才是第一资源，创新是第一动力",
-                headImg: "../../../static/img/headImg.jpg",
+                // title: "习近平：发展是第一要务，人才是第一资源，创新是第一动力",
+                // headImg: "../../../static/img/headImg.jpg",
                 col1:16,
                 col2:8,
-                publisher:"新华社",
-                recommend:62,
-                status:"热点"
+                // publisher:"新华社",
+                // recommend:62,
+                status:"热点",
+                show:true
             }
-        }
+        },
+        props:["title","headImg","publisher","recommend"]
     }
 </script>
 

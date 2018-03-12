@@ -19,13 +19,10 @@
         name: "topNews",
         data() {
             return {
-                title: "习近平：发展是第一要务，人才是第一资源，创新是第一动力",
-                headImg: "../../../static/img/headImg.jpg",
-                col1: 24,
-                publisher: "新华社",
-                recommend: 62
+                col1: 24
             }
-        }
+        },
+        props:["title","publisher","recommend"]
     }
 </script>
 
@@ -47,4 +44,14 @@
         margin-top: 10px;
         font-size: 10px;
     }
+    a{
+        text-decoration: none;
+    }
+    a:link{
+        color:black;
+    }
+    a:visited{
+        color:black;
+    }
+
 </style>

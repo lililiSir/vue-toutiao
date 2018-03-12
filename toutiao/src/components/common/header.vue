@@ -7,7 +7,9 @@
                         <img :src="headImg" alt="headImg" width="48" height="48" style="border-radius:25px">       
                     </div>                   
                     <div class="searchInput">
-                        <el-input :placeholder="placeholderMsg" prefix-icon="el-icon-search"></el-input>
+                        <el-input :placeholder="placeholderMsg">
+                             <!-- <i slot="prefix" class="el-input__icon el-icon-search"></i> -->
+                        </el-input>
                     </div>
                     <div class="sendMessage">
                         <i class="iconfont icon-shuru"></i>
@@ -42,9 +44,8 @@
         background: #d43d3d;
     }
     .grid-content {
-        padding: 0px;
-        margin: 0px;
         height: 60px;
+        background: #d43d3d;
     }
     .headImg{
         padding-top:4px;
@@ -67,5 +68,11 @@
     }
     .icon-shuru{
         font-size:20px;
+    }
+    .el-icon-search{
+        clear: both;
+        position: absolute;
+        left: -2px;
+        top:1px;
     }
 </style>
