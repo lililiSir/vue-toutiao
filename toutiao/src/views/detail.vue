@@ -73,21 +73,35 @@
             }
         },
         created() {
-            axios.get("https://easy-mock.com/mock/5a83160c948cfd365a524088/apis/article/info", {
-                params: {
-                    id: this.$route.params.id
-                }
-            }).then(response => {
-                //获取对象，显示数据
-                console.log(response.data.data);
-                this.source = response.data.data.source;
-                this.title = response.data.data.title;
-                this.intro = response.data.data.intro;
-                this.tags=response.data.data.tags;
-                this.likeNum=response.data.data.like_num;
-            }).catch(function(error) {
-                console.error("异常");
-            });
+            // axios.get("https://easy-mock.com/mock/5a83160c948cfd365a524088/apis/article/info", {
+            //     params: {
+            //         id: this.$route.params.id
+            //     }
+            // }).then(response => {
+            //     //获取对象，显示数据
+            //     console.log(response.data.data);
+            //     this.source = response.data.data.source;
+            //     this.title = response.data.data.title;
+            //     this.intro = response.data.data.intro;
+            //     this.tags=response.data.data.tags;
+            //     this.likeNum=response.data.data.like_num;
+            // }).catch(function(error) {
+            //     console.error("异常");
+            // });axios.get("https://easy-mock.com/mock/5a83160c948cfd365a524088/apis/article/info", {
+            //     params: {
+            //         id: this.$route.params.id
+            //     }
+            // }).then(response => {
+            //     //获取对象，显示数据
+            //     console.log(response.data.data);
+            //     this.source = response.data.data.source;
+            //     this.title = response.data.data.title;
+            //     this.intro = response.data.data.intro;
+            //     this.tags=response.data.data.tags;
+            //     this.likeNum=response.data.data.like_num;
+            // }).catch(function(error) {
+            //     console.error("异常");
+            // });
         }
     }
 </script>

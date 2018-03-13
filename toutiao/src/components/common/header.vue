@@ -4,12 +4,11 @@
             <el-col :span="24">
                 <div class="grid-content">
                     <div class="headImg">
-                        <img :src="headImg" alt="headImg" width="48" height="48" style="border-radius:25px">       
+                        <router-link to="/personal"><img :src="headImg" alt="headImg" width="48" height="48" style="border-radius:25px"></router-link>       
                     </div>                   
                     <div class="searchInput">
-                        <el-input :placeholder="placeholderMsg">
-                             <!-- <i slot="prefix" class="el-input__icon el-icon-search"></i> -->
-                        </el-input>
+                        <el-input :placeholder="placeholderMsg"></el-input>
+                        <p>输入的字数为：</p>
                     </div>
                     <div class="sendMessage">
                         <i class="iconfont icon-shuru"></i>
