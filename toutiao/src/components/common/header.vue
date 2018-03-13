@@ -7,8 +7,7 @@
                         <router-link to="/personal"><img :src="headImg" alt="headImg" width="48" height="48" style="border-radius:25px"></router-link>       
                     </div>                   
                     <div class="searchInput">
-                        <el-input :placeholder="placeholderMsg"></el-input>
-                        <p>输入的字数为：</p>
+                        <el-input :placeholder="placeholderMsg" v-model="msg"></el-input>
                     </div>
                     <div class="sendMessage">
                         <i class="iconfont icon-shuru"></i>
@@ -26,7 +25,8 @@
         data(){
             return{
                 placeholderMsg:"我叫王大锤|时间都去哪了|...",
-                headImg:"../../../static/img/headImg.jpg"
+                headImg:"../../../static/img/headImg.jpg",
+                msg:""
             }
         }
     }

@@ -36,17 +36,17 @@
     // 顶部导航栏
     import hotNews from '@/components/common/hotNews'
     import topNews from '@/components/common/topNews'
-    // import axios from 'axios'
+    import axios from 'axios'
     export default {
         name: "topNavigation",
         data() {
             return {
                 msg: "这是顶部导航栏",
                 activeName: "second",
-                topId:"",
-                topTitle:"",
-                topPublisher:"",
-                topRecommend:"",
+                topId:"10000",
+                topTitle:"这是怎么回事",
+                topPublisher:"新华社",
+                topRecommend:"70",
                 homeList: []
             }
         },
@@ -55,32 +55,32 @@
             topNews
         },
         created() {
-            // axios.get("https://www.easy-mock.com/mock/5a83160c948cfd365a524088/apis/home/list").then(response=>{
-            //     console.log(response.data.data.list);
-            //     if(response.data.data.list.length>0){
-            //         this.topId=response.data.data.list[0].id;
-            //         this.topTitle=response.data.data.list[0].title;
-            //         this.topPublisher=response.data.data.list[0].source;
-            //         this.topRecommend=response.data.data.list[0].comment;
-            //     }
+            axios.get("https://www.easy-mock.com/mock/5a83160c948cfd365a524088/apis/home/list").then(response=>{
+                console.log(response.data.data.list);
+                if(response.data.data.list.length>0){
+                    this.topId=response.data.data.list[0].id;
+                    this.topTitle=response.data.data.list[0].title;
+                    this.topPublisher=response.data.data.list[0].source;
+                    this.topRecommend=response.data.data.list[0].comment;
+                }
 
-            //     for(let i=1;i<response.data.data.list.length;i++){
-            //         let tmp={};
-            //         tmp.hotId=response.data.data.list[i].id;
-            //         tmp.hotTitle=response.data.data.list[i].title;
-            //         tmp.hotPublisher=response.data.data.list[i].source;
-            //         if(response.data.data.list[i].images[0].length>0){
-            //             tmp.headImg=response.data.data.list[i].images[0];
-            //         }else{
-            //             tmp.headImg="../../../static/img/headImg.jpg";
-            //         }                   
-            //         tmp.hotRecommend=response.data.data.list[i].comment;
-            //         this.homeList.push(tmp);
-            //     }
-            //     //后面的作为普通的热点新闻进行展示
-            // }).catch(function (error){
-            //     console.error("异常");
-            // })
+                for(let i=1;i<response.data.data.list.length;i++){
+                    let tmp={};
+                    tmp.hotId=response.data.data.list[i].id;
+                    tmp.hotTitle=response.data.data.list[i].title;
+                    tmp.hotPublisher=response.data.data.list[i].source;
+                    if(response.data.data.list[i].images.length>0){
+                        tmp.headImg=response.data.data.list[i].images[0];
+                    }else{
+                        tmp.headImg="../../../static/img/headImg.jpg";
+                    }                   
+                    tmp.hotRecommend=response.data.data.list[i].comment;
+                    this.homeList.push(tmp);
+                }
+                //后面的作为普通的热点新闻进行展示
+            }).catch(function (error){
+                console.error("异常");
+            })
         }
     }
 </script>
@@ -91,7 +91,8 @@
         padding: 0px;
         width: 100%;
         height: 40px;
-        background-color: #f9fcfc, overflow：hidden
+        background-color: #f9fcfc
+        
     }
     .slide-new {
         height: 530px;

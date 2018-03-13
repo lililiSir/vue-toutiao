@@ -1,6 +1,6 @@
 <template>
     <div class="detail">
-        <div class="top">
+        <div class="detail-top">
             <div class="top-left-back">
                 <router-link to="/"><i class="iconfont icon-fanhui5"></i></router-link>
             </div>
@@ -11,7 +11,7 @@
                 <el-button type="danger">关注</el-button>
             </div>
         </div>
-        <div class="middle">
+        <div class="detail-middle">
             <div class="middle-title">
                 <span><strong>{{title}}</strong></span>
                 <span class="middle-title-author">{{source}}&nbsp;&nbsp;{{month}}-{{day}}&nbsp;&nbsp;{{time}}</span>
@@ -31,7 +31,7 @@
                 </div>
             </div>
         </div>
-        <div class="bottom">
+        <div class="detail-bottom">
             <el-row>
                 <el-col :span="12">
                     <el-input placeholder="写评论" size="small" class="bottom-recoment">
@@ -73,35 +73,21 @@
             }
         },
         created() {
-            // axios.get("https://easy-mock.com/mock/5a83160c948cfd365a524088/apis/article/info", {
-            //     params: {
-            //         id: this.$route.params.id
-            //     }
-            // }).then(response => {
-            //     //获取对象，显示数据
-            //     console.log(response.data.data);
-            //     this.source = response.data.data.source;
-            //     this.title = response.data.data.title;
-            //     this.intro = response.data.data.intro;
-            //     this.tags=response.data.data.tags;
-            //     this.likeNum=response.data.data.like_num;
-            // }).catch(function(error) {
-            //     console.error("异常");
-            // });axios.get("https://easy-mock.com/mock/5a83160c948cfd365a524088/apis/article/info", {
-            //     params: {
-            //         id: this.$route.params.id
-            //     }
-            // }).then(response => {
-            //     //获取对象，显示数据
-            //     console.log(response.data.data);
-            //     this.source = response.data.data.source;
-            //     this.title = response.data.data.title;
-            //     this.intro = response.data.data.intro;
-            //     this.tags=response.data.data.tags;
-            //     this.likeNum=response.data.data.like_num;
-            // }).catch(function(error) {
-            //     console.error("异常");
-            // });
+            axios.get("https://easy-mock.com/mock/5a83160c948cfd365a524088/apis/article/info", {
+                params: {
+                    id: this.$route.params.id
+                }
+            }).then(response => {
+                //获取对象，显示数据
+                console.log(response.data.data);
+                this.source = response.data.data.source;
+                this.title = response.data.data.title;
+                this.intro = response.data.data.intro;
+                this.tags=response.data.data.tags;
+                this.likeNum=response.data.data.like_num;
+            }).catch(function(error) {
+                console.error("异常");
+            });
         }
     }
 </script>
@@ -113,7 +99,7 @@
         padding: 0px;
         margin: 0px;
     }
-    .top {
+    .detail-top {
         height: 60px;
         width: 100%;
         background-color: #f9fcfc;
@@ -138,7 +124,7 @@
         right: 10px;
         padding-top: 10px;
     }
-    .middle {
+    .detail-middle {
         width: 97%;
         height: 570px;
         border-bottom: 1px solid #CCCCCC;
@@ -167,7 +153,7 @@
     .middle-tags{
         margin-top:10px
     }
-    .bottom {
+    .detail-bottom {
         padding: 0px;
         height: 40px;
         background-color: #D3D3D3
