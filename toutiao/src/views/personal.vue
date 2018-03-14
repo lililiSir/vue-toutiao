@@ -72,8 +72,18 @@
 </template>
 
 <script>
+    import { swiper, swiperSlide } from 'vue-awesome-swiper'
     export default {
-        name: "personal"
+        name: "personal",
+        components:{
+            swiper,swiperSlide
+        },
+        data(){
+            return {
+                newsList:[{title:"推荐"},{title:"关注"},{title:"南京"}],
+                homeNewsIndex:0
+            }
+        }
     }
 </script>
 
